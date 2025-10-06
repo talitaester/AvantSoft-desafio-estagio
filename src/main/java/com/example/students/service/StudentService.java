@@ -52,27 +52,27 @@ public class StudentService {
 
 
 
-    public String findMissingLetter(Student student) {
+    public String findUniqueLetter(Student student) {
         if (student.getName() == null || student.getName().trim().isEmpty()) {
             return "_";
         }
-
         String lowerCaseName = student.getName().toLowerCase();
-        boolean[] alphabet = new boolean[26]; // a-zs
+        int[] letterCount = new int[26]; 
+
 
         for (char c : lowerCaseName.toCharArray()) {
             if (c >= 'a' && c <= 'z') {
-                alphabet[c - 'a'] = true;
+                letterCount[c - 'a']++;
             }
         }
 
-        for (int i = 0; i < 26; i++) {
-            if (!alphabet[i]) {
-                return String.valueOf((char) ('a' + i));
+        for (char c : lowerCaseName.toCharArray()) {
+            if (c >= 'a' && c <= 'z' && letterCount[c - 'a'] == 1) {
+                return String.valueOf(c);
             }
         }
 
-        return "_";
+        return "_"; 
     }
 
 }

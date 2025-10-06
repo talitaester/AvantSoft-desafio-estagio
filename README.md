@@ -25,7 +25,6 @@ API simples para cadastro e gerenciamento de estudantes, permitindo operações 
 ### 1. Clonar o repositório
 ```bash
 git clone https://github.com/talitaester/AvantSoft-desafio-estagio.git
-cd student-api
 ```
 
 ### 2. Configurar Banco de Dados

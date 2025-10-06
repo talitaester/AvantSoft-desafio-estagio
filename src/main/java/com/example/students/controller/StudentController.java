@@ -39,7 +39,7 @@ public class StudentController {
     }
 
     private StudentDTO convertToDTO(Student student) {
-        String missingLetter = studentService.findMissingLetter(student);
+        String missingLetter = studentService.findUniqueLetter(student);
         return new StudentDTO(
                 student.getId(),
                 student.getName(),
